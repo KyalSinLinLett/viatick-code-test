@@ -7,15 +7,16 @@ MP4File.hasMany(GPSPoint);
 
 module.exports = (filename, path) => {
     const records = extract(path);
+    // if (records === "failed") return;
 
     sequealize
         .sync()
         .then((result) => {
-            console.log(result);
+            // console.log(result);
             return MP4File.create({ filename: filename, path: path });
         })
         .then((mp4File) => {
-            console.log(mp4File);
+            // console.log(mp4File);
 
             // return mp4File.createGpsPointBulk(records);
             // GPSPoint.
