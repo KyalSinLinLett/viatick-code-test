@@ -83,9 +83,9 @@ const run = (FILE_PATH) => {
         console.log("here>>", atom_size, atom_type, offset);
 
         // failsafe
-        // if (atom_size === "00000000") {
-        //     return "failed"
-        // }
+        if (atom_size === "00000000") {
+            break;
+        }
 
         if (atom_type === "moov") {
             console.log("moov atom detected");
